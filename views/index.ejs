@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code  Editor</title>
+	<link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/163bcdffcb.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+  
+	</head>
+<body>
+
+
+	<!--Navbar-->
+	<nav class="navbar">
+		<div class="logo">
+			<h3 class="heading"><a href="#">CodeCanvas</a></h3>
+			<form action='/index' method="post">
+				<input type="text" placeholder="Untitled" id="fileName" name="Filename">
+				<button type="submit">Submit</button>
+				<p class="File_name">Filename: <%= File_name %></p>
+			</form>
+		</div>
+		<ul class="links">
+			<li><a href="/">Home</a></li>
+			<li><a href="https://www.linkedin.com/in/devang-thaker-0b5b87260/">About</a></li>
+			<li><a href='login'>Login</a></li>
+			<li><a href='sign_up'>Register</a></li>
+			<li><a href='secondPage'>Another_Layout</a></li>
+		</ul>
+	</nav>
+
+
+	<div class="mainarea" id="mainPart">
+		<div class="Contain">
+		<div class="editors">
+			<h2> <i class="fa-brands fa-html5"></i> HTML</h2>
+			<textarea id="html" placeholder="HTML"></textarea>
+		</div>
+		<div class="editors">
+			<h2> <i class="fa-brands fa-css3"></i> CSS</h2>			
+			<textarea id="css" placeholder="CSS"></textarea>
+		</div>
+		<div class="editors">
+		<h2> <i class="fa-brands fa-js"></i> Javascript</h2>
+			<textarea id="js" placeholder="Javascript"></textarea>
+		</div>	
+	</div>
+
+	<div class="output">
+	<iframe id="code"></iframe>
+	</div>
+	</div>
+
+</body>
+	<script>
+		function initialise(){
+	 
+			var html=document.getElementById("html");
+			var css=document.getElementById("css");
+			var js=document.getElementById("js");
+			var code=document.getElementById("code").contentWindow.document;
+		
+		 
+		document.body.onkeyup=function(){
+				code.open();
+				var content=html.value+"<style>"+css.value+"</style><script>"+js.value+"<\/script>";
+				code.write(content);
+				code.close();
+			}
+		}
+		initialise();
+
+		const codeTextarea = document.getElementById('html');
+  		Prism.highlightElement(codeTextarea, false);	
+	</script>
+</html>
+
+
+
+
+
+

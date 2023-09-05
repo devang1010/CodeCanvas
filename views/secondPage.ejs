@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Code editor Second Layout</title>
+	 <!-- <link rel="stylesheet" href="styles.css"> -->
+	 <script src="https://kit.fontawesome.com/163bcdffcb.js" crossorigin="anonymous"></script>
+	 <head>
+		 <style>
+			 *{
+	 margin: 0;
+	 padding: 0;
+	 font-family: Consolas, 'Courier New', monospace;
+	 /* overflow: hidden; */
+ }
+ 
+ body{
+	 background: #454545;
+	 color: #fff;
+ }
+
+ .navbar{
+    width: 100%;
+    height: 70px;
+    /* max-width: 1200px; */
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+}
+
+input{
+    background: black;
+    border: none;
+    border-bottom: white solid 1px;
+    color: white;
+    outline: none;
+}
+
+.navbar .logo{
+    margin-left: 20px;
+}
+
+a{
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: 0.5s ease-in;
+    
+}
+
+a:hover{
+    color: rgb(92, 244, 92);
+}
+
+li{
+    list-style: none;
+    margin: 0 30px;
+}
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+ .fa-html5{
+	 color: red;
+	 font-size: 1.1rem;
+	 margin-left: 10px;
+	 margin-right: 10px;
+ }
+ 
+ .fa-css3{
+	 color: blue;
+	 font-size: 1.1rem;
+	 margin-left: 10px;
+	 margin-right: 10px;
+ }
+ 
+ .fa-js{
+	 color: yellow;
+	 font-size: 1.1rem;
+	 margin-left: 10px;
+	 margin-right: 10px;
+ }
+ 
+ 
+ .mainarea{
+	 display: flex;
+	 /* display:grid;
+	 grid-template-columns: 1fr 2fr; */
+	 /* grid-gap: 20px; */
+	 justify-content:space-between;
+ }
+ 
+ .editors,.output{
+	 width:100%;
+ }
+ 
+ textarea{
+	 width:100%;
+	 min-height:240px;
+	 overflow:scroll;
+	 font-size:x-large;
+	 background: #1f1f1f;
+	 color: white;
+	 border: none;
+	 outline: none;
+ }
+ 
+ #code{
+	 width:100%;
+	 height:100vh;
+	 border: none;
+	 outline: none;
+	 background-color: white;
+ }
+ 
+ body{
+	 text-align:center;
+ }
+ 
+ h2{
+	 color:white;
+	 background-color: black;
+	 padding:2px;
+ }
+
+ a{
+	color: white;
+ }
+		 </style>
+		 
+	 
+</head>
+<body>
+
+	<!--Navbar-->
+	<nav class="navbar">
+		<div class="logo">
+			<h3><a href="#">CodeCanvas</a></h3>
+			<h4><input type="text" placeholder="Untitled"><i class="fa-solid fa-pencil"></i></h4>
+		</div>
+		<ul class="links">
+			<li><a href="/">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="login">Login</a></li>
+			<li><a href="sign_up">Sign Up</a></li>
+			<li><a href="index">Another_Layout</a></li>
+		</ul>
+	</nav>
+	<div class="mainarea">
+		<!-- <div class="Contain"> -->
+		<div class="editors">
+			<h2> <i class="fa-brands fa-html5"></i> HTML</h2>
+			<textarea id="html" placeholder="HTML"></textarea>
+		</div>
+		<div class="editors">
+			<h2> <i class="fa-brands fa-css3"></i>  CSS</h2>			
+			<textarea id="css" placeholder="CSS"></textarea>
+		</div>
+		<div class="editors">
+		<h2> <i class="fa-brands fa-js"></i> Javascript</h2>
+			<textarea id="js" placeholder="Javascript"></textarea>
+		</div>
+	<!-- </div> -->
+	</div>
+	<div class="output">
+	<h2> <i class="fa-solid fa-play"></i> output</h2>
+	<iframe id="code"></iframe>
+	</div>
+
+</body>
+<script>
+	function initialise(){
+	 
+		var html=document.getElementById("html");
+		var css=document.getElementById("css");
+		var js=document.getElementById("js");
+		var code=document.getElementById("code").contentWindow.document;
+		
+		 
+		document.body.onkeyup=function(){
+			code.open();
+			var content=html.value+"<style>"+css.value+"</style><script>"+js.value+"<\/script>";
+			code.write(content);
+			code.close();
+		}
+	}
+	initialise();
+</script>
+</html>
+
+
+
+
+
+
+
+
+

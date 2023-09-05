@@ -1,0 +1,127 @@
+<%- include('partials/header') %>
+  
+
+        <!-------------------------- SideBar ----------------------------------------->
+    <div class="side-bar">
+        <div class="logo"><h3 class="Hero-heading"><a href="#">CodeCanvas</a></h3></div>
+        <p class="Hero-text">Try My online Editor</p>
+        <a class="Hero-index-link" href='index'>
+        <button onclick="naviagate()">
+            <span class="box">
+                Start Coding!
+            </span>
+        </button></a>
+
+        <a href="https://www.linkedin.com/in/devang-thaker-0b5b87260/"><button class="cta" id="logIn-button">
+            <span>About Me</span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button></a>
+
+        <a href='login'>
+        <button class="cta" id="logIn-button">
+            <span>LogIn</span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button></a>
+
+          <a href='sign_up'>
+          <button class="cta" id="logIn-button">
+            <span>Register</span>
+            <svg viewBox="0 0 13 10" height="10px" width="15px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button></a>
+    </div>
+
+
+    <div class="Hero-mainpage">
+        <div class="Hero-mainpagecontainer1">
+            <p class="Hero-text1">The place to build, test, and discover your imagination about the front-end code.</p>
+            <p class="Hero-text2">CodeCanvas is a social development environment for front-end designers and developers. Build and deploy a website, show off your work, build test cases to learn and debug, and find inspiration.</p>
+            <a href="login"><button class="Hero-button">
+                Sign Up for Free
+            </button></a>
+        </div>
+
+
+        <div class="Hero-mainpagecontainer2">
+            <div class="Hero-img">
+                <div class="Hero-img-container">
+                    <div class="Hero-img-html"><img src="html.png" alt=""></div>
+                    <div class="Hero-img-css"><img src="css.png" alt=""></div>
+                    <div class="Hero-img-js"><img src="js.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="Hero-cards-container">
+        <div class="card-container" id="card1">
+            <div class="card">
+            <div class="front-content">
+              <p>Build & Test</p>
+            </div>
+            <div class="content">
+              <p class="heading">Build & Test</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipii
+                voluptas ten mollitia pariatur odit
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <div class="card-container" id="card2">
+            <div class="card">
+            <div class="front-content">
+              <p>Learn </p>
+            </div>
+            <div class="content">
+              <p class="heading">Learn</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipii
+                voluptas ten mollitia pariatur odit
+              </p>
+            </div>
+          </div>
+          </div>
+
+          <div class="card-container" id="card3">
+            <div class="card">
+            <div class="front-content">
+              <p>Productivness</p>
+            </div>
+            <div class="content">
+              <p class="heading">Productivness</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipii
+                voluptas ten mollitia pariatur odit
+              </p>
+            </div>
+          </div>
+          </div>
+    </div>
+
+    <div class="email">
+      <div class="email_content">
+        <h1 class="animate-email">Get updated for new Projects</h1>
+        <p class="animate-email">Sign up for our newsletter below</p>
+        <form action="/" method="post">
+          <div class="form_wrap">
+            <label for="email">
+              <input type="email" name="emailInput" placeholder="Enter your email" id="email" class="animate-email">
+            </label>
+            <a href="/"><button class="button" name="submit" type="submit" class="animate-email">Sign Up</button></a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+<%- include('partials/footer') %>
